@@ -13,9 +13,20 @@ extern "C" {
 #endif
 #include <glfw/glfw3.h>
 
+#include <dragon/dg_backend.h>
+#include <dragon/graphics/DgWindowCreateParams.h>
+
 struct dgEngine {
     // Vulkan Create Variables
     static VkInstance vkInstance;
+    static VkApplicationInfo appInfo{};
+    static VkInstanceCreateInfo createInfo{};
+
+    // GLFW Variables
+    static uint32_t glfwExtensionCount = 0;
+    static uint32_t extensionCount = 0;
+    static const char** glfwExtensions;
+    static std::vector<GLFWwindow*> windows;
 
     // Variables that may be unnecessarry in a production environment 
     #ifndef DRAGON_FULL_POWER
@@ -29,7 +40,12 @@ struct dgEngine {
 
     // App Specific Variables
     static std::string appName;
-}
+
+    // System Variables
+    static std::vector<GPU*> gpus;
+};
+
+DGAPI DG_BOOL dgCreateNewWindow(DgWindowCreateParams params);
 
 #ifdef _cplusplus
 }
