@@ -1,20 +1,7 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.24)
 
-MACRO(subdirlist result curdir)
-	FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
-	SET(dirlist "")
-	FOREACH(child ${children})
-		IF(IS_DIRECTORY ${curdir}/${child})
-			LIST(APPEND dirlist ${child})
-		ENDIF()
-	ENDFOREACH()
-	SET(${result} ${dirlist})
-ENDMACRO()
-
-find_package(Vulkan REQUIRED)
-
-file(GLOB H_ROOT_HEADERS ./include/dragon/*.h)
-file(GLOB HPP_ROOT_HEADERS ./include/dragon/*.hpp)
+set(H_ROOT_HEADERS )
+set(HPP_ROOT_HEADERS include/dragon/dg_backend.hpp include/dragon/dgEngine.hpp include/dragon/dragon.hpp include/dragon/init.hpp)
 
 file(GLOB_RECURSE H_AUDIO_HEADERS ./include/dragon/audio/*.h)
 file(GLOB_RECURSE HPP_AUDIO_HEADERS ./include/dragon/audio/*.hpp)
@@ -34,26 +21,14 @@ list(APPEND HPP_HEADERS ${HPP_ROOT_HEADERS} ${HPP_AUDIO_HEADERS} ${HPP_COMPUTE_H
 list(APPEND HEADERS ${H_HEADERS} ${HPP_HEADERS})
 
 add_subdirectory(boost)
-set(BUILD_SHARED_LIBS ON)
 add_subdirectory(glfw)
-set(BUILD_STATIC_LIBS ON)
 add_subdirectory(glm)
-set(BUILD_SHARED_LIBS OFF)
 
-subdirlist(BOOST_SUBDIRS ./boost)
-subdirlist(GLFW_SUBDIRS ./glfw)
 
-list(APPEND Dragon_INCLUDE_DIRS
-	include
-	glm
-	${BOOST_SUBDIRS}
-	${GLFW_SUBDIRS}
-	${Vulkan_INCLUDE_DIRS}
-)
 
 add_library(Dragon-Headers INTERFACE ${HEADERS})
-
-target_link_libraries(Dragon-Headers INTERFACE Boost)
-target_link_libraries(Dragon-Headers INTERFACE GLFW)
+target_include_directories(Dragon-Headers INTERFACE ${Dragon_INCLUDE_DIRS})
+target_link_libraries(Dragon-Headers INTERFACE ${Dragon_LINK_LIBRARIES} ${Dragon_LINK_INTERFACES})
 
 add_library(Dragon::Headers ALIAS Dragon-Headers)
+list(APPEND Dragon_LINK_INTERFACES Dragon::Headers)
