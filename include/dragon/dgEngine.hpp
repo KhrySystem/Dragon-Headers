@@ -6,7 +6,7 @@
 #include <dragon/dg_backend.hpp>
 #include <dragon/graphics/DgWindowCreateParams.hpp>
 
-struct dgEngine {
+typedef struct dgEngine_T {
     // Vulkan Create Variables
     static VkInstance vkInstance;
     static VkApplicationInfo appInfo;
@@ -15,17 +15,18 @@ struct dgEngine {
     // GLFW Variables
     static uint32_t glfwExtensionCount;
     static uint32_t extensionCount;
-    static const char** glfwExtensions;
+    static std::vector<const char*> extensions;
+    static std::vector<VkExtensionProperties> supportedExtensions;
     static std::vector<GLFWwindow*> windows;
 
     // Variables that may be unnecessarry in a production environment 
     #ifndef DRAGON_FULL_POWER
-        static const inline std::vector<const char*> requestedValidationLayers = {
-            "VK_LAYER_KHRONOS_validation"
-        };
+        static std::vector<const char*> requestedValidationLayers;
         static uint32_t layerCount;
-        static std::vector<VkLayerProperties> availibleLayers;
+        static std::vector<VkLayerProperties> availableLayers;
         static std::vector<const char*> availibleLayerNames;
+        static VkDebugUtilsMessengerEXT debugMessenger;
+        static VkDebugUtilsMessengerCreateInfoEXT debugMessengerCreateInfo;
     #endif
 
     // App Specific Variables
@@ -33,6 +34,11 @@ struct dgEngine {
 
     // System Variables
     //static std::vector<GPU*> gpus;
-};
+} dgEngine;
 
 DGAPI DG_BOOL dgCreateNewWindow(DgWindowCreateParams params);
+DGAPI DG_BOOL dgShouldWindowClose(int index);
+DGAPI void dgUpdate();
+DGAPI void dgCloseWindow(int index);
+
+

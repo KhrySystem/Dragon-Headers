@@ -24,8 +24,6 @@ add_subdirectory(boost)
 add_subdirectory(glfw)
 add_subdirectory(glm)
 
-
-
 add_library(Dragon-Headers INTERFACE ${HEADERS})
 target_include_directories(Dragon-Headers INTERFACE ${Dragon_INCLUDE_DIRS})
 target_link_libraries(Dragon-Headers INTERFACE ${Dragon_LINK_LIBRARIES} ${Dragon_LINK_INTERFACES})
