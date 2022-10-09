@@ -20,9 +20,11 @@ list(APPEND HPP_HEADERS ${HPP_ROOT_HEADERS} ${HPP_AUDIO_HEADERS} ${HPP_COMPUTE_H
 
 list(APPEND HEADERS ${H_HEADERS} ${HPP_HEADERS})
 
-add_subdirectory(boost)
+set(BUILD_SHARED_LIBS OFF)
 add_subdirectory(glfw)
 add_subdirectory(glm)
+set(BUILD_SHARED_LIBS ON)
+add_subdirectory(openal)
 
 add_library(Dragon-Headers INTERFACE ${HEADERS})
 target_include_directories(Dragon-Headers INTERFACE ${Dragon_INCLUDE_DIRS})

@@ -1,5 +1,9 @@
 #pragma once
 
+// Dragon info
+#define DG_HEADER_VERSION "0.0.1" 
+#define DG_HEADER_VERSION_COMPLETE "0.0.1.0"
+
 // SLI Headers
 #include <cstdlib>
 #include <exception>

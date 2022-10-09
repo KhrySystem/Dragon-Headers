@@ -3,10 +3,11 @@
 #include <string>
 #include <vector>
 
-#include <dragon/dg_backend.hpp>
 #include <dragon/graphics/DgWindowCreateParams.hpp>
+#include <dragon/dg_backend.hpp>
+#include <dragon/GPU.hpp>
 
-typedef struct dgEngine_T {
+typedef struct dgEngine {
     // Vulkan Create Variables
     static VkInstance vkInstance;
     static VkApplicationInfo appInfo;
@@ -19,21 +20,12 @@ typedef struct dgEngine_T {
     static std::vector<VkExtensionProperties> supportedExtensions;
     static std::vector<GLFWwindow*> windows;
 
-    // Variables that may be unnecessarry in a production environment 
-    #ifndef DRAGON_FULL_POWER
-        static std::vector<const char*> requestedValidationLayers;
-        static uint32_t layerCount;
-        static std::vector<VkLayerProperties> availableLayers;
-        static std::vector<const char*> availibleLayerNames;
-        static VkDebugUtilsMessengerEXT debugMessenger;
-        static VkDebugUtilsMessengerCreateInfoEXT debugMessengerCreateInfo;
-    #endif
-
     // App Specific Variables
     static std::string appName;
 
     // System Variables
-    //static std::vector<GPU*> gpus;
+    static uint32_t gpuCount;
+    static std::vector<GPU> gpus;
 } dgEngine;
 
 DGAPI DG_BOOL dgCreateNewWindow(DgWindowCreateParams params);

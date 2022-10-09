@@ -2,7 +2,7 @@
 
 #include <dragon/dg_backend.hpp>
 
-struct DgWindowCreateParams {
+typedef struct DgWindowCreateParams {
 	int width;
 	int height;
-};
+} DgWindowCreateParams;
