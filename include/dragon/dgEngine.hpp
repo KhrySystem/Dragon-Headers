@@ -3,9 +3,9 @@
 #include <string>
 #include <vector>
 
-#include <dragon/graphics/DgWindowCreateParams.hpp>
-#include <dragon/dg_backend.hpp>
-#include <dragon/GPU.hpp>
+#include "graphics/DgWindowCreateParams.hpp"
+#include "dg_backend.hpp"
+#include "GPU.hpp"
 
 namespace Dragon {
     typedef struct engine {
@@ -15,7 +15,6 @@ namespace Dragon {
         static VkInstanceCreateInfo createInfo;
 
         // GLFW Variables
-        static uint32_t glfwExtensionCount;
         static uint32_t extensionCount;
         static std::vector<const char*> extensions;
         static std::vector<VkExtensionProperties> supportedExtensions;

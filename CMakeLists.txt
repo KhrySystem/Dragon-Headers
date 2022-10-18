@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.20)
 
-set(H_ROOT_HEADERS )
-set(HPP_ROOT_HEADERS include/dragon/dg_backend.hpp include/dragon/dgEngine.hpp include/dragon/dragon.hpp include/dragon/init.hpp)
+set(H_ROOT_HEADERS ./*.h)
+set(HPP_ROOT_HEADERS ./*.hpp)
 
 file(GLOB_RECURSE H_AUDIO_HEADERS ./include/dragon/audio/*.h)
 file(GLOB_RECURSE HPP_AUDIO_HEADERS ./include/dragon/audio/*.hpp)
@@ -25,6 +25,7 @@ add_subdirectory(glfw)
 add_subdirectory(glm)
 set(BUILD_SHARED_LIBS ON)
 add_subdirectory(openal)
+add_subdirectory(openxr)
 
 add_library(Dragon-Headers INTERFACE ${HEADERS})
 target_include_directories(Dragon-Headers INTERFACE ${Dragon_INCLUDE_DIRS})

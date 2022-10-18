@@ -25,6 +25,12 @@
 //Vulkan Header
 #include <vulkan/vulkan.hpp>
 
+// OpenAL Header
+#include <AL/al.h>
+
+// OpenCL Header
+#include <CL/opencl.h>
+
 //GLFW Header
 #define GLFW_INCLUDE_NONE
 #include <glfw/glfw3.h>
