@@ -7,3 +7,6 @@
 [submodule "openal"]
 	path = openal
 	url = ../../kcat/OpenAL-Soft
+[submodule "openxr"]
+	path = openxr
+	url = https://github.com/KhronosGroup/OpenXR-SDK
