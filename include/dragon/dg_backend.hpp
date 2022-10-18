@@ -29,9 +29,7 @@
 #define GLFW_INCLUDE_NONE
 #include <glfw/glfw3.h>
 
-
-
 // Dragon Primitives
-#define DG_BOOL bool
+#define DgBool32 VkBool32
 #define DG_TRUE GLFW_TRUE
 #define DG_FALSE GLFW_FALSE

@@ -2,17 +2,18 @@
 
 #include <exception>
 #include <boost/exception/all.hpp>
+namespace Dragon {
+	typedef struct ExceptionTag_T { } ExceptionTag;
+	typedef boost::error_info<ExceptionTag, const char*> ExceptionInfo;
 
-typedef struct DgExceptionTag_T { } DgExceptionTag;
-typedef boost::error_info<DgExceptionTag, const char*> DgExceptionInfo;
+	typedef struct BaseException_T: virtual boost::exception, virtual std::exception { } BaseException;
 
-typedef struct DgBaseException_T: virtual boost::exception, virtual std::exception { } DgBaseException;
-
-typedef DgBaseException dgGLFWInitializationFailedException;
-typedef DgBaseException dgGLFWVulkanNotSupportedException;
-typedef DgBaseException dgGLFWWindowCreationFailedException;
-typedef DgBaseException dgVulkanInitializationFailedException;
-typedef DgBaseException dgVulkanDebugUtilsMessengerEXTCreationFailedException;
-typedef DgBaseException dgVulkanValidationLayerNotFoundException;
-typedef DgBaseException dgVulkanExtensionLayerNotFoundException;
-typedef DgBaseException dgVulkanNoPhysicalDevicesFoundException;
+	typedef BaseException GLFWInitializationFailedException;
+	typedef BaseException GLFWVulkanNotSupportedException;
+	typedef BaseException GLFWWindowCreationFailedException;
+	typedef BaseException VulkanInitializationFailedException;
+	typedef BaseException VulkanDebugUtilsMessengerEXTCreationFailedException;
+	typedef BaseException VulkanValidationLayerNotFoundException;
+	typedef BaseException VulkanExtensionLayerNotFoundException;
+	typedef BaseException VulkanNoPhysicalDevicesFoundException;
+};

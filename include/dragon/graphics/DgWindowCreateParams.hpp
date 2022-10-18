@@ -1,8 +1,9 @@
 #pragma once
 
 #include <dragon/dg_backend.hpp>
-
-typedef struct DgWindowCreateParams {
-	int width;
-	int height;
-} DgWindowCreateParams;
+namespace Dragon {
+	typedef struct WindowCreateParams {
+		int width;
+		int height;
+	} WindowCreateParams;
+};

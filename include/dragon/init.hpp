@@ -1,7 +1,8 @@
 #pragma once 
 
 #include <dragon/dg_backend.hpp>
-
-DGAPI void dgInit(std::string appName);
-DGAPI DG_BOOL dgIsExtensionLayerSupported(std::string layerName);
-DGAPI void dgTerminate();
+namespace Dragon {
+	DGAPI void init(std::string appName);
+	DGAPI DgBool32 isExtensionLayerSupported(std::string layerName);
+	DGAPI void terminate();
+}

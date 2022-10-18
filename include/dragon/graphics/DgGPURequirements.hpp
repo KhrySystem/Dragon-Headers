@@ -1,7 +1,8 @@
 #pragma once
 
 #include <dragon/dg_backend.hpp>
+namespace Dragon {
+	typedef struct GPURequirements {
 
-typedef struct DgGPURequirements {
-
-} DgGPURequirements;
+	} GPURequirements;
+};

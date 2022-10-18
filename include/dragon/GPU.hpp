@@ -1,14 +1,16 @@
 #pragma once
 
-#include <dragon/graphics/DgGPURequirements.hpp>
-#include <dragon/dg_backend.hpp>
+#include "graphics/DgGPURequirements.hpp"
+#include "dg_backend.hpp"
 
-typedef struct GPU {
-	VkPhysicalDevice handle;
-	VkPhysicalDeviceFeatures features;
-	VkPhysicalDeviceMemoryProperties memoryProperties;
-	VkPhysicalDeviceProperties properties;
-} GPU;
+namespace Dragon {
+	typedef struct GPU {
+		VkPhysicalDevice handle;
+		VkPhysicalDeviceFeatures features;
+		VkPhysicalDeviceMemoryProperties memoryProperties;
+		VkPhysicalDeviceProperties properties;
+	} GPU;
 
-DGAPI std::vector<GPU> dgGetGPUs();
-DGAPI int dgRateGPU(GPU gpu, DgGPURequirements reqs);
+	DGAPI std::vector<GPU> getGPUs();
+	DGAPI int rateGPU(GPU gpu, GPURequirements reqs);
+};
