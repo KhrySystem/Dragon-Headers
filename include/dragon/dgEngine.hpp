@@ -21,8 +21,8 @@ namespace Dragon {
         static std::vector<GLFWwindow*> windows;
 
         // OpenAL Variables
-        static ALCDevice* activeDevice;
-        static ALCContext alcContext;
+        static ALCdevice* activeDevice;
+        static ALCcontext alcContext;
 
         // App Specific Variables
         static std::string appName;

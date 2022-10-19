@@ -7,6 +7,14 @@ namespace Dragon
 	typedef struct AudioOutputDevice {
 
 	} AudioOutputDevice;
-	DGAPI std::vector getAudioOutputDevices();
-	DGAPI DgBool32 makeOutputDeviceActive(AudioOutputDevice device);
+
+	typedef struct AudioImputDevice {
+
+	} AudioInputDevice;
+
+	DGAPI std::vector<AudioOutputDevice> getAudioOutputDevices();
+	DGAPI DgBool32 makeAudioOutputDeviceActive(AudioOutputDevice device);
+
+	DGAPI std::vector<AudioInputDevices> getAudioInputDevices();
+	DGAPI DgBool32 makeAudioInputDeviceActive(AudioInputDevice device);
 } 
