@@ -25,13 +25,14 @@
 //Vulkan Header
 #include <vulkan/vulkan.hpp>
 
-// OpenAL Header
+// OpenAL Headers
 #include <AL/al.h>
+#include <AL/alc.h>
+#include <AL/alext.h>
+#include <AL/efx-creative.h>
+#include <AL/efx-presets.h>
+#include <AL/efx.h>
 
-// OpenCL Header
-#ifdef DRAGON_OPENCL_FOUND
-	#include <CL/opencl.h>
-#endif
 //GLFW Header
 #define GLFW_INCLUDE_NONE
 #include <glfw/glfw3.h>

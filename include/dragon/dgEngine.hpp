@@ -8,7 +8,7 @@
 #include "GPU.hpp"
 
 namespace Dragon {
-    typedef struct engine {
+    typedef struct Engine {
         // Vulkan Create Variables
         static VkInstance vkInstance;
         static VkApplicationInfo appInfo;
@@ -20,13 +20,17 @@ namespace Dragon {
         static std::vector<VkExtensionProperties> supportedExtensions;
         static std::vector<GLFWwindow*> windows;
 
+        // OpenAL Variables
+        static ALCDevice* activeDevice;
+        static ALCContext alcContext;
+
         // App Specific Variables
         static std::string appName;
 
         // System Variables
         static uint32_t gpuCount;
         static std::vector<GPU> gpus;
-    } engine;
+    } Engine;
 
     DGAPI DgBool32 createNewWindow(Dragon::WindowCreateParams params);
     DGAPI DgBool32 shouldWindowClose(int index);
