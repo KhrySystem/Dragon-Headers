@@ -29,8 +29,9 @@
 #include <AL/al.h>
 
 // OpenCL Header
-#include <CL/opencl.h>
-
+#ifdef DRAGON_OPENCL_FOUND
+	#include <CL/opencl.h>
+#endif
 //GLFW Header
 #define GLFW_INCLUDE_NONE
 #include <glfw/glfw3.h>
