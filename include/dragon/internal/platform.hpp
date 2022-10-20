@@ -2,7 +2,7 @@
 
 #include <boost/predef/os.h>
 
-#if defined(BOOST_OS_WINDOWS) || defined(BOOST_OS_WINDOWS_WIN64) || defined(BOOST_OS_WINDOWS_WIN32) || defined(BOOST_OS_WINDOWS__WIN32__)
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 	// All Windows builds
 	#include <Windows.h>
 	#if defined(BOOST_OS_WINDOWS_WIN64)
@@ -26,7 +26,6 @@
 	#elif defined(BOOST_OS_IOS)
 		// All iOS builds
 	#endif
-#elif defined(BOOST_OS_LINUX)
+#elif defined(__linux__)
 	// All linux
-
 #endif
