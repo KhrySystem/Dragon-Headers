@@ -1,0 +1,25 @@
+name: Run CMake for Dragon
+
+on: 
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-linux:
+    name: Run Dragon Build Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Run Actions
+        uses: releasehub-com/github-action-create-pr-parent@v1
+        with: 
+          github_token: ${{ secrets.Dragon_ACTION_CMAKE_EDIT_SUBMODULE_EDIT }}
+          parent_repository: KhrySystem/Dragon
+          checkout_branch: main
+          pr_against_branch: main
+          owner: KhrySystem
