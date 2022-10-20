@@ -22,7 +22,7 @@ namespace Dragon {
 
         // OpenAL Variables
         static ALCdevice* activeDevice;
-        static ALCcontext alcContext;
+        static ALCcontext* alcContext;
 
         // App Specific Variables
         static std::string appName;
