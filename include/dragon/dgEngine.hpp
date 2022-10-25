@@ -32,7 +32,7 @@ namespace Dragon {
         static std::vector<GPU> gpus;
     } Engine;
 
-    DGAPI DgBool32 createNewWindow(Dragon::WindowCreateParams params);
+    DGAPI DgBool32 createNewWindow(WindowCreateParams params);
     DGAPI DgBool32 shouldWindowClose(int index);
     DGAPI void update();
     DGAPI void closeWindow(int index);
