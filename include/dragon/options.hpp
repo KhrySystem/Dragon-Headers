@@ -32,3 +32,9 @@ namespace Dragon {
 #define DRAGON_STREAMBREATH_ENABLED		0x00000003
 // Dragon's Thunderbreath module hint handle to toggle it on/off
 #define DRAGON_THUNDERBREATH_ENABLED	0x00000004
+
+// 3D Object file types
+// STL 3D Model File
+#define DRAGON_FILETYPE_STL				0x00000008
+// OBJ 3D Model File
+#define DRAGON_FILETYPE_OBJ				0x00000009

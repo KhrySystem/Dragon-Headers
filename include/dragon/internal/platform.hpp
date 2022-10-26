@@ -22,6 +22,7 @@
 	#include <TargetConditionals.h>
 	#if defined(BOOST_OS_MACOS)
 		// All MacOS builds
+		#define DG_PLAT_MACOS
 		#include <Cocoa/Cocoa.h>
 	#elif defined(BOOST_OS_IOS)
 		// All iOS builds
