@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build-linux:
+  build-linux_unix-makefiles:
     name: Run Dragon Build Test
     runs-on: ubuntu-latest
 
