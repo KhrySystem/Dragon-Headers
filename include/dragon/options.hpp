@@ -4,17 +4,21 @@
 #include "dgEngine.hpp"
 
 namespace Dragon {
+	/// @brief Sets options for Dragon. All values default to true unless set by this function.
+	/// @param option an unsigned, 32 bit value specifying the option to change
+	/// @param value the new value
+	/// @return
 	DGAPI void setOption(const uint32_t option, DgBool32 value);
 	DGAPI DgBool32 getOption(const uint32_t option);
 
 	namespace Options {
-		typedef struct ExtensionOptions {
+		struct ExtensionOptions {
 			static DgBool32 ironEnabled;
 			static DgBool32 lightEnabled;
 			static DgBool32 streamEnabled;
 			static DgBool32 thunderEnabled;
 
-		} ExtensionOptions;
+		};
 	};
 
 	

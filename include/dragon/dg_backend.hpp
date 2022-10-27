@@ -18,8 +18,8 @@
 #include <boost/exception_ptr.hpp>
 
 // Dragon Headers included by all files
+#include <dragon/stream/error.hpp>
 #include "internal/platform.hpp"
-#include "internal/exception.hpp"
 #include "internal/string.hpp"
 
 //Vulkan Header
@@ -34,7 +34,7 @@
 #include <AL/efx.h>
 
 //GLFW Header
-#define GLFW_INCLUDE_NONE
+#define GLFW_INCLUDE_VULKAN
 #include <glfw/glfw3.h>
 
 // Dragon Primitives
