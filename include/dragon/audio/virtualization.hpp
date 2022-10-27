@@ -1,6 +1,6 @@
 #pragma once
 
-#include <dragon/dg_backend.hpp>
+#include <dragon/backend.hpp>
 
 #include "devices.hpp"
 

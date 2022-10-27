@@ -19,7 +19,6 @@
 
 // Dragon Headers included by all files
 #include "internal/platform_dependent.hpp"
-#include "internal/exception.hpp"
 #include "internal/string.hpp"
 
 //Vulkan Header
