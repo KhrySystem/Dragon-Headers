@@ -1,6 +1,5 @@
 #pragma once
 
-#include "graphics/DgGPURequirements.hpp"
 #include "dg_backend.hpp"
 
 namespace Dragon {
@@ -12,5 +11,5 @@ namespace Dragon {
 	};
 
 	DGAPI std::vector<GPU> getGPUs();
-	DGAPI int rateGPU(GPU gpu, GPURequirements reqs);
+	DGAPI int rateGPU(GPU gpu);
 };

@@ -26,12 +26,19 @@ namespace Dragon {
 
 // Option Hex codes for extension on/off toggling before init is called
 
+// Dragon's Firebreath module hint handle to toggle it on/off
 #define DRAGON_FIREBREATH_ENABLED		0x00000005
-// Dragon's Ironbreath module handle to toggle it on/off
+// Dragon's Ironbreath module hint handle to toggle it on/off
 #define DRAGON_IRONBREATH_ENABLED 		0x00000001
+// Dragon's Lightbreath module hint handle to toggle it on/off
 #define DRAGON_LIGHTBREATH_ENABLED 		0x00000002
+// Dragon's Streambreath module hint handle to toggle it on/off
 #define DRAGON_STREAMBREATH_ENABLED		0x00000003
+// Dragon's Thunderbreath module hint handle to toggle it on/off
 #define DRAGON_THUNDERBREATH_ENABLED	0x00000004
 
-#define DRAGON_FILETYPE_MP3				0x00000007
-#define DRAGON_FILETYPE_WAV				0x00000006
+// 3D Object file types
+// STL 3D Model File
+#define DRAGON_FILETYPE_STL				0x00000008
+// OBJ 3D Model File
+#define DRAGON_FILETYPE_OBJ				0x00000009

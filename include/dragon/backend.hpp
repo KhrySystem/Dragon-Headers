@@ -18,8 +18,8 @@
 #include <boost/exception_ptr.hpp>
 
 // Dragon Headers included by all files
-#include <dragon/stream/error.hpp>
-#include "internal/platform.hpp"
+#include "internal/platform_dependent.hpp"
+#include "internal/exception.hpp"
 #include "internal/string.hpp"
 
 //Vulkan Header

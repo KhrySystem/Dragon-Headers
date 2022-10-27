@@ -17,10 +17,12 @@ namespace Dragon
 
 	DGAPI std::vector<AudioInputDevice> getAudioInputDevices();
 	DGAPI DgBool32 makeAudioInputDeviceActive(AudioInputDevice device);
+
+	DGAPI ALCdevice* getOutputDeviceHandle(AudioOutputDevice device);
 } 
 
 
-// Filetypes that help Dragon know what to do with the file.
+// Filetypes that help Dragon know what to do with the audio file.
 // MP3 Audio File
 #define DRAGON_FILETYPE_MP3				0x00000007
 // WAV Audio File

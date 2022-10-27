@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#include "audio/devices.hpp"
+#include "audio/virtualization.hpp"
 #include "graphics/DgWindowCreateParams.hpp"
 #include "dg_backend.hpp"
 #include "GPU.hpp"
@@ -21,8 +23,9 @@ namespace Dragon {
         static std::vector<GLFWwindow*> windows;
 
         // OpenAL Variables
-        static ALCdevice* activeDevice;
-        static ALCcontext* alcContext;
+        static std::vector<AudioInputDevice> inputDevices;
+        static std::vector<AudioOutputDevice> outputDevices;
+        static std::vector<AudioChannel> audioChannels;
 
         // App Specific Variables
         static DgString appName;
@@ -32,7 +35,7 @@ namespace Dragon {
         static std::vector<GPU> gpus;
     };
 
-    DGAPI DgBool32 createNewWindow(Dragon::WindowCreateParams params);
+    DGAPI DgBool32 createNewWindow(WindowCreateParams params);
     DGAPI DgBool32 shouldWindowClose(int index);
     DGAPI void update();
     DGAPI void closeWindow(int index);

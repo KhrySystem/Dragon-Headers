@@ -1,7 +1,6 @@
 #pragma once
 
 #include "audio/devices.hpp"
-#include "graphics/DgWindowCreateParams.hpp"
 #include "internal/platform.hpp"
 #include "dg_backend.hpp"
 #include "dgEngine.hpp"
@@ -12,4 +11,6 @@
 #include <dragon/iron/dgIron.hpp>
 #include <dragon/light/dgLight.hpp>
 #include <dragon/stream/dgStream.hpp>
-#include <dragon/thunder/dgThunder.hpp>
+#ifdef DRAGON_OPENCL_FOUND
+	#include <dragon/thunder/dgThunder.hpp>
+#endif
