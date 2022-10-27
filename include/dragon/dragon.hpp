@@ -1,8 +1,7 @@
 #pragma once
 
 #include "audio/devices.hpp"
-#include "internal/platform.hpp"
-#include "dg_backend.hpp"
+#include "backend.hpp"
 #include "dgEngine.hpp"
 #include "init.hpp"
 #include "options.hpp"

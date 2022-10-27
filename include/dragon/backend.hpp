@@ -38,5 +38,6 @@
 
 // Dragon Primitives
 #define DgBool32 VkBool32
+#define DgString std::string
 #define DG_TRUE GLFW_TRUE
 #define DG_FALSE GLFW_FALSE

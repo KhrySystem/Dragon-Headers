@@ -1,6 +1,6 @@
 #pragma once
 
-#include "dg_backend.hpp"
+#include "backend.hpp"
 
 namespace Dragon {
 	struct GPU {

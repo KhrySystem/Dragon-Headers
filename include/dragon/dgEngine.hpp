@@ -6,7 +6,7 @@
 #include "audio/devices.hpp"
 #include "audio/virtualization.hpp"
 #include "graphics/DgWindowCreateParams.hpp"
-#include "dg_backend.hpp"
+#include "backend.hpp"
 #include "GPU.hpp"
 
 namespace Dragon {
