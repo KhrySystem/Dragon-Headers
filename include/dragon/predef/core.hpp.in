@@ -1,0 +1,3 @@
+#pragma once
+
+#define DRAGON_VERSION VK_MAKE_API_VERSION(@Dragon_VERSION_MAJOR@, @Dragon_VERSION_MINOR@, @Dragon_VERSION_PATCH@, @Dragon_VERSION_TWEAK@)

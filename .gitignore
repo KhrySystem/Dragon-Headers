@@ -32,3 +32,6 @@
 *.app
 
 .vscode/
+
+# Configured Files
+inlude/dragon/predef/core.hpp
