@@ -21,15 +21,20 @@ typedef VkBool32 DgBool32;
 #define DG_TRUE GLFW_TRUE
 #define DG_FALSE GLFW_FALSE
 
-#ifdef __DEPRECEATED
-	const DgBool32 DRAGON_SEND_DEPRECEATEED = DG_TRUE;
+#ifndef NDEBUG
+	const DgBool32 DRAGON_MESSAGE_ENABLED = DG_TRUE;
+	#ifndef __DEPRECEATED
+		const DgBool32 DRAGON_SEND_DEPRECEATEED = DG_FALSE;
+	#else
+		const DgBool32 DRAGON_SEND_DEPRECEATED = DG_TRUE;
+	#endif
+	#ifndef __EXCEPTIONS
+		const DgBool32 DRAGON_SEND_EXCEPTIONS = DG_FALSE;
+	#else 
+		const DgBool32 DRAGON_SEND_EXCEPTIONS = DG_TRUE;
+	#endif
 #else
-	const DgBool32 DRAGON_SEND_DEPRECEATED = DG_FALSE;
-#endif
-#ifdef __EXCEPTIONS
-	const DgBool32 DRAGON_SEND_EXCEPTIONS = DG_TRUE;
-#else 
-	const DgBool32 DRAGON_SEND_EXCEPTIONS = DG_FALSE;
+	const DgBool32 DRAGON_MESSAGE_ENABLED = DG_FALSE
 #endif
 
 #if INTPTR_MAX == INT32_MAX
@@ -106,36 +111,37 @@ typedef VkBool32 DgBool32;
 #endif
 
 namespace Dragon {
-	namespace Audio {
-		#include "audio/outputDevice.hpp"
-
-		#include "audio/engine.hpp"
+	namespace Message {
+		#include "internal/message.hpp"
 	}
 
+	namespace Audio {
+		#include "audio/outputDevice.hpp"
+		#include "audio/engine.hpp"
+	}
 	namespace CL {
 		namespace Physics {
 			#include "cl/physics/engine.hpp"
 		}
-
 		#include "cl/engine.hpp"
 	}
-
 	namespace Graphics {
 		namespace Particle {
 			#include "graphics/particle/engine.hpp"
 		}
-
 		namespace XR {
 			#include "graphics/xr/engine.hpp"
 		}
-
 		#include "graphics/engine.hpp"
 	}
 
+	#include "internal/createInfo.hpp"
+
 	namespace Message {
+		#include "message/callbacks.hpp"
 		#include "message/engine.hpp"
 	}
-
+	
 	#include "internal/engine.hpp"
 	#include "internal/init.hpp"
 }

@@ -1,3 +1,3 @@
 #pragma once
 
-DGAPI std::string VkResultToString(VkResult result);
+DGAPI std::string VkResultAsString(VkResult result);
