@@ -1,10 +1,10 @@
 #pragma once
 
-
-
-
-struct Engine {
-     void(*CreateInfo::pCallback)(Message*) ppCallback(Message*);    
+struct Message {
+    DgUInt64 code;
+    std::string message;
 };
 
-DGAPI void sendMessage(Message* message);
+struct Engine {
+    std::function<void(Message*)> pCallback; 
+};

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <functional>
 #include <vector>
 
 #include <AL/al.h>
@@ -20,11 +21,15 @@
 typedef VkBool32 DgBool32;
 #define DG_TRUE GLFW_TRUE
 #define DG_FALSE GLFW_FALSE
+typedef uint_fast64_t DgUInt64;
+typedef int_fast64_t DgInt64;
+typedef uint32_t DgUInt32;
+typedef int32_t DgInt32;
 
 #ifndef NDEBUG
 	const DgBool32 DRAGON_MESSAGE_ENABLED = DG_TRUE;
 	#ifndef __DEPRECEATED
-		const DgBool32 DRAGON_SEND_DEPRECEATEED = DG_FALSE;
+		const DgBool32 DRAGON_SEND_DEPRECEATED = DG_FALSE;
 	#else
 		const DgBool32 DRAGON_SEND_DEPRECEATED = DG_TRUE;
 	#endif
@@ -111,10 +116,6 @@ typedef VkBool32 DgBool32;
 #endif
 
 namespace Dragon {
-	namespace Message {
-		#include "internal/message.hpp"
-	}
-
 	namespace Audio {
 		#include "audio/outputDevice.hpp"
 		#include "audio/engine.hpp"
@@ -138,10 +139,13 @@ namespace Dragon {
 	#include "internal/createInfo.hpp"
 
 	namespace Message {
-		#include "message/callbacks.hpp"
 		#include "message/engine.hpp"
 	}
-	
+
 	#include "internal/engine.hpp"
 	#include "internal/init.hpp"
+
+	namespace Message {
+		#include "message/callbacks.hpp"
+	}
 }
