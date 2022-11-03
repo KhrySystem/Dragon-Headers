@@ -39,7 +39,7 @@ typedef int32_t DgInt32;
 		const DgBool32 DRAGON_SEND_EXCEPTIONS = DG_TRUE;
 	#endif
 #else
-	const DgBool32 DRAGON_MESSAGE_ENABLED = DG_FALSE
+	const DgBool32 DRAGON_MESSAGE_ENABLED = DG_FALSE;
 #endif
 
 #if INTPTR_MAX == INT32_MAX
@@ -144,6 +144,10 @@ namespace Dragon {
 
 	#include "internal/engine.hpp"
 	#include "internal/init.hpp"
+
+	namespace Graphics {
+		#include "graphics/init.hpp"
+	}
 
 	namespace Message {
 		#include "message/callbacks.hpp"
